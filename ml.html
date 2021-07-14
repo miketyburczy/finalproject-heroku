@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+
+        <title>BTC Predictor</title>
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="./static/css/style.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar">
+                <img src="./static/images/BTC_Logo.svg.png" alt="bitcoin" class="logo">                
+                <ul>
+                    <li><a href="home.html">BTC Dashboard</a></li>
+                    <li><a href="ml.html#section1">Machine learning</a></li>
+                    <li><a href="ml.html#section2">Data</a></li>
+                    <li><a href="ml.html#section3">Fit/Predict</a></li>
+                    <li><a href="ml.html#section4">Analysis</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="img1">
+            <div class="ptext">
+                <span class="border">
+                    Machine Learning
+                </span>
+            </div>
+        </div>
+
+        <section class="section section-dark" id="section1">
+            <h2>Why Machine Learning?</h2>
+            <p>
+                Machine Learning is a tool used in computer science to solve complex problems. Using data and algorithms, we can train a program to learn the patterns and complexities just as the human brain would, but more efficiently. Algorithms are categorized as either supervised or unsupervised learning. Supervised learning is the process of training a model with data that is already available to the user and can be applied to either make a Classification, like fraud detection, or build a Regression model, like forecasting the performance of the stock market. In unsupervised learning, the data used may not be labeled or classified and thus, the model must learn without knowing the outcome of the data, however, the model can make inferences about the data it is processing. For example, unsupervised learning is used in targeted marketing, so when you see that next ad for a new swimsuit or sunglasses, an algorithm was used to determine your likes based on the data collected from search history. Machine learning is a form of AI and is a valuable tool used in business to help make profitable decisions and avoid risk. For the purpose of project, we will be using a supervised learning model to make a linear regression for the price of Bitcoin and determine if we can create a model that can predict the next days price.
+            </p>
+        </section>
+
+        <div class="img2">
+            <div class="ptext">
+                <span class="border">
+                    DATA
+                </span>
+            </div>
+        </div>
+
+        <section class="section section-dark" id="section2">
+            <p>
+                The popularity of cryptocurrencies over the past few years has exploded. More and more people are investing their money into Bitcoin, Litecoin and Ethereum. What makes cryptocurrencies so appealing? Their popularity seems just as mysterious as their existence with new currencies appearing every day. With this mind, our group wanted to take a deeper look into Bitcoin and see if we could build a supervised regression model that would be able to predict the prices of Bitcoin and if there were any interesting trends that our model could return. In order to train our model, we needed a large quantity of data for Bitcoin. We used minute by minute Bitcoin data obtained from Kaggle, which covered the period from December 2011 to March 31, 2021, yielding over 3.6 million rows of information to build and train our model. Our data preprocessing included checking NaN (Null) values (no Nulls found), formatting the Timestamp column from timestamp to Datetime and renaming some of the columns. This was plenty of data to start training our model. Lastly, our supervised model would take in 3 independent variables: high price, low price and volume. We created our final data-frame holding this data. 
+            </p>
+            <div class="image-container">
+                <img src="./static/images/initial_data.png" alt="raw data" height=500px width=800>
+                <img src="./static/images/clean_data.png" alt="clean data" height=500px width=600>
+            </div>
+        </section>
+
+        <div class="img3">
+            <div class="ptext">
+                <span class="border">
+                    Model -> Fit -> Predict
+                </span>
+            </div>
+        </div>
+
+        <section class="section section-dark" id="section3">
+            <h2></h2>
+            <p>
+                Now that we have prepared our data for analysis, we can begin to train our model so that it could make predictions. First, we need to define our independent and dependent variables. As indicated above, we are using a supervised learning model which means that we have data for what is expected from our model. We defined our independent variables as High price, Low price and Volume traded which will be held in the X variable. Our dependent variable, or the expected output from our model, will be the closing price stored in the y variable. Our next step is to split the data into a training dataset and a testing dataset. The reason we do this is so that the model can begin to learn from the training data before we test the accuracy of our model with the testing data. To remove any bias from the training and testing process, when the data is split, it is split randomly. Once this is complete, we can fit the data to our model and make our prediction. What you can see from our residual plot, which is a scatter plot that shows the dispersion of the data, is that our model’s predictions from the testing data is quite accurate compared to the training data. To provide a more concise visualization of our model’s prediction, we created another data-frame that shows the actual closing price versus the predicted price. Now, let’s feed our model some current data and see what output our model returns.
+            </p>
+            <img src="./static/images/split_data.png" alt="clean data" height=200px width=1200px>
+            <div class="image-container">
+                <img src="./static/images/prediction.png" alt="raw data" height=600px width=800px>
+                <img src="./static/images/model_output.png" alt="clean data" height=600px width=500px>
+            </div>
+
+        </section>
+
+        <div class="img4">
+            <div class="ptext">
+                <span class="border">
+                    Analysis
+                </span>
+            </div>
+        </div>
+
+        <section class="section" id="section4">
+            <div class="analysis-container">
+                <div class="analysis-descript">
+                    <p>
+                        Although our model can be tested on any stock, we chose to do a further testing on Bitcoin data from April 2021 to July 1, 2021, and we plotted the predicted results against the actual results. It is worth noting that both lines appeared as we had suspected based on the r2 and MSE values obtained from training the model. We then calculated moving averages from the actual closing values. The reason for calculating the moving average of a stock is to help smooth out the price data over the specified period by creating a constantly updated average price and this helps mitigate the impacts of random, short-term fluctuations on the stock price. We calculated a 15-day and 30-day simple moving averages (SMAs) as well as an exponential moving average (EMA). We chose to plot the 30-day moving average against the exponential moving average and they both depict a similar trend to the actual closing price and hence gives users a fair idea of the general price trend of the stock. 
+                    </p>
+                </div>
+                <img src="./static/images/table.png" alt="raw data" height=400px width=800px>
+            </div>
+
+            <div class="image-container">
+                <img src="./static/images/actual-predicted.png" alt="raw data" height=400px width=750px>
+                <img src="./static/images/moving-avg.png" alt="raw data" height=400px width=750px>
+            </div>
+            
+        </section>
+
+        <div id="footer">
+            <div class="foot-text">Data provided by Quandl</div>
+            <div class="foot-text">Created by: Garrett, Harry, Tejas, Mike, David</div>
+        </div>
+
+
+    </body>
+
+
+</html>

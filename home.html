@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang=en>
+    <head>
+        <!-- Our CSS -->
+        <link rel="stylesheet" type="text/css" href="static/css/style.css">
+        <title>BTC Predictor</title>
+    </head>
+
+    <body>
+        
+        <header>
+            <div class="navbar">
+                <img src="./static/images/BTC_Logo.svg.png" alt="bitcoin" class="logo" >           
+                <ul>
+                    <li><a href="home.html">Dashboard</a></li>
+                    <li><a href="ml.html">Machine Learning</a></li>
+                </ul>
+            </div>
+        </header>
+
+
+        <div class="container g1-container">
+            <div class="wrapper-visual">
+                <div id="graph"></div>
+                <div id="graph2"></div>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div class="descript-container">
+                <h2>About:</h2>
+                <p>Bitcoin was created by Satoshi Nakamoto, a pseudonymous person or team who outlined the technology in a 2008 white paper. It’s an appealingly simple concept: bitcoin is digital money that allows for secure peer-to-peer transactions on the internet. Since Bitcoin’s creation, thousands of new cryptocurrencies have been launched, but bitcoin (abbreviated as BTC) remains the largest by market capitalization and trading volume. Users are able to generate BTC through the process of mining. Bitcoin has a current supply of 18,748,037. The last known price of Bitcoin is 34,611.6950477 USD and is up 0.31 over the last 24 hours. It is currently trading on 9170 active market(s) with $25,525,337,634.81 traded over the last 24 hours.</p>
+            </div>
+            <div class="visual-wrapper">
+                <div id="graph3"></div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="foot-text">Data provided by Quandl</div>
+            <div class="foot-text">Created by: Garrett, Harry, Tejas, Mike, David</div>
+        </div>
+
+
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v3.min.js"></script>
+        <!-- Plotly -->
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+        <script src="https://sdk.amazonaws.com/js/aws-sdk-2.945.0.min.js"></script>
+
+        <script type="text/javascript" src="./static/js/app.js"></script>
+
+    </body>
+
+</html>

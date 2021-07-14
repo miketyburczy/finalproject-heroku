@@ -1,1 +1,2 @@
-# finalproject-heroku
+# final-project
+Final Project Bitcoin Predictor
